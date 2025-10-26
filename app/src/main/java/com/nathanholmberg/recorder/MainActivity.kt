@@ -11,8 +11,28 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import androidx.lifecycle.ViewModel
 
+import com.nathanholmberg.recorder.ui.MainScreen
+import com.nathanholmberg.recorder.viewmodel.MainViewModel
+import com.nathanholmberg.recorder.model.player.AndroidAudioPlayer
+import com.nathanholmberg.recorder.model.recorder.AndroidAudioRecorder
+
 class MainActivity : ComponentActivity() {
-    val mainViewModel = MainViewModel()
+    private val recorder by lazy {
+        AndroidAudioRecorder(applicationContext)
+    }
+
+    private val player by lazy {
+        AndroidAudioPlayer(applicationContext)
+    }
+
+    private val mainViewModel: MainViewModel by viewModels {
+        object : ViewModelProvider.Factory {
+            @Suppress("UNCHECKED_CAST")
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                return MainViewModel(recorder, player, cacheDir) as T
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
