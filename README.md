@@ -1,6 +1,8 @@
 # Recorder - Voice Recording and Transcription App
 
-![App Icon](assets/launcher.png)
+<div align="center">
+  <img src="assets/ic_launcher_foreground.png" alt="App Icon" width="150">
+</div>
 
 ## Overview
 The Recorder app is designed to robustly handle voice recordings and convert them into transcripts. It aims to provide an intuitive way to record audio in the foreground and process the recorded chunks into meaningful transcriptions, suitable for summaries and other tasks.
