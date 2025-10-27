@@ -47,12 +47,20 @@ class MainViewModel(
 
         audioRecorder.stop()
 
-        var transcript = transcribeAudio(audioFile!!)
-        if (transcript.isNullOrEmpty()) {
-            transcript = "Unable to transcribe audio."
-        }
+        // Try to get transcript
+        try {
+            var transcript = transcribeAudio(audioFile!!)
 
-        updateTranscription(transcript )
+            if (transcript.isNullOrEmpty()) {
+                transcript = "Blank Transcription."
+            }
+
+            updateTranscription(transcript)
+        } catch (e: Exception) {
+            requestAlert("Error", e.message ?: "Unknown error")
+            updateTranscription("Unable to get transcript.")
+            return
+        }
     }
 
     fun startPlayback() {
