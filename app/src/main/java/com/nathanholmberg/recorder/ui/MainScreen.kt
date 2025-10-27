@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -24,6 +25,10 @@ fun MainScreen(mainViewModel: MainViewModel) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally // Center elements within the column
         ) {
+            Text(
+                text = "Audio Recorder",
+                style = MaterialTheme.typography.displayLarge
+            )
             Button(onClick = { mainViewModel.startRecording() }) {
                 Text(text = "Start Recording")
             }
