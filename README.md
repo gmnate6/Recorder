@@ -26,3 +26,7 @@ The Recorder app is designed to robustly handle voice recordings and convert the
 - Build and integrate transcript summary generation using an LLM API.
 
 This application provides a robust foundation for voice recording and transcription functionalities and highlights a modern Android development approach.
+
+<div align="center">
+  <video src="assets/video.webm" type="video/webm" controls width="600"></video>
+</div>
