@@ -29,5 +29,5 @@ This application provides a robust foundation for voice recording and transcript
 
 ## Demo Video
 
-[Watch the demo video](assets/video.webm)
+[Watch the demo video](assets/video.mp4)
 
