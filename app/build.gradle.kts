@@ -39,6 +39,14 @@ android {
     buildFeatures {
         compose = true
     }
+
+    packaging {
+        resources {
+            // Exclude duplicate META-INF files
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/DEPENDENCIES"
+        }
+    }
 }
 
 dependencies {
@@ -57,4 +65,7 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    implementation(platform("com.google.cloud:libraries-bom:26.1.4"))
+    implementation("com.google.cloud:google-cloud-speech")
 }

@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
@@ -13,13 +15,12 @@ import com.nathanholmberg.recorder.viewmodel.MainViewModel
 
 @Composable
 fun MainScreen(mainViewModel: MainViewModel) {
+    val transcription by mainViewModel.transcription.collectAsState()
 
-    // Box to center everything vertically and horizontally
     Box(
-        modifier = Modifier.fillMaxSize(), // Make the Box cover the full screen
-        contentAlignment = Alignment.Center // Center all child elements
+        modifier = Modifier.fillMaxSize(),                     // Make the Box cover the full screen
+        contentAlignment = Alignment.Center                    // Center all child elements
     ) {
-        // Column to stack elements vertically
         Column(
             horizontalAlignment = Alignment.CenterHorizontally // Center elements within the column
         ) {
@@ -35,6 +36,7 @@ fun MainScreen(mainViewModel: MainViewModel) {
             Button(onClick = { mainViewModel.stopPlayback() }) {
                 Text(text = "Stop Playback")
             }
+            Text(text = "Transcription:\n$transcription")
         }
     }
 }
