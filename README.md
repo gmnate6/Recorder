@@ -1,7 +1,7 @@
 # Recorder - Voice Recording and Transcription App
 
 <div align="center">
-  <img src="assets/ic_launcher_foreground.png" alt="App Icon" width="150">
+  <img src="assets/launcher.png" alt="App Icon" width="150">
 </div>
 
 ## Overview
