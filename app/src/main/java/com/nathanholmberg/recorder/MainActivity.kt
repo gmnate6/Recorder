@@ -61,6 +61,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
     // Function to display an AlertDialog
     private fun showAlert(title: String, message: String) {
         val builder = android.app.AlertDialog.Builder(this)
